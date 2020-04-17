@@ -1,0 +1,246 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x46010C3C7852EF78",
+      "device": "xc7z020clg400-1",
+      "name": "design_1",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2019.2",
+      "validated": "true"
+    },
+    "design_tree": {
+      "clk_wiz": "",
+      "StateMachine_0": "",
+      "Debouncer_0": "",
+      "Debouncer_1": ""
+    },
+    "ports": {
+      "LED1_0": {
+        "direction": "O"
+      },
+      "keyIn_0": {
+        "direction": "I"
+      },
+      "keyIn_1": {
+        "direction": "I"
+      },
+      "sys_clock": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "design_1_sys_clock",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "125000000"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000"
+          }
+        }
+      },
+      "reset_rtl": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_HIGH"
+          }
+        }
+      }
+    },
+    "components": {
+      "clk_wiz": {
+        "vlnv": "xilinx.com:ip:clk_wiz:6.0",
+        "xci_name": "design_1_clk_wiz_0",
+        "parameters": {
+          "CLK_IN1_BOARD_INTERFACE": {
+            "value": "sys_clock"
+          },
+          "USE_BOARD_FLOW": {
+            "value": "true"
+          }
+        }
+      },
+      "StateMachine_0": {
+        "vlnv": "xilinx.com:module_ref:StateMachine:1.0",
+        "xci_name": "design_1_StateMachine_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "StateMachine",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_clk_out1",
+                "value_src": "ip_prop"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "Btn0": {
+            "direction": "I"
+          },
+          "Btn1": {
+            "direction": "I"
+          },
+          "LED1": {
+            "direction": "O"
+          }
+        }
+      },
+      "Debouncer_0": {
+        "vlnv": "xilinx.com:module_ref:Debouncer:1.0",
+        "xci_name": "design_1_Debouncer_0_0",
+        "parameters": {
+          "delay": {
+            "value": "70"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Debouncer",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_clk_out1",
+                "value_src": "ip_prop"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "keyIn": {
+            "direction": "I"
+          },
+          "keyOut": {
+            "direction": "O"
+          }
+        }
+      },
+      "Debouncer_1": {
+        "vlnv": "xilinx.com:module_ref:Debouncer:1.0",
+        "xci_name": "design_1_Debouncer_0_1",
+        "parameters": {
+          "delay": {
+            "value": "70"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Debouncer",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_clk_out1",
+                "value_src": "ip_prop"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "keyIn": {
+            "direction": "I"
+          },
+          "keyOut": {
+            "direction": "O"
+          }
+        }
+      }
+    },
+    "nets": {
+      "clk_wiz_clk_out1": {
+        "ports": [
+          "clk_wiz/clk_out1",
+          "StateMachine_0/clk",
+          "Debouncer_0/clk",
+          "Debouncer_1/clk"
+        ]
+      },
+      "Debouncer_0_keyOut": {
+        "ports": [
+          "Debouncer_0/keyOut",
+          "StateMachine_0/Btn0"
+        ]
+      },
+      "StateMachine_0_LED1": {
+        "ports": [
+          "StateMachine_0/LED1",
+          "LED1_0"
+        ]
+      },
+      "Debouncer_1_keyOut": {
+        "ports": [
+          "Debouncer_1/keyOut",
+          "StateMachine_0/Btn1"
+        ]
+      },
+      "keyIn_0_1": {
+        "ports": [
+          "keyIn_0",
+          "Debouncer_0/keyIn"
+        ]
+      },
+      "keyIn_1_1": {
+        "ports": [
+          "keyIn_1",
+          "Debouncer_1/keyIn"
+        ]
+      },
+      "sys_clock_1": {
+        "ports": [
+          "sys_clock",
+          "clk_wiz/clk_in1"
+        ]
+      },
+      "reset_rtl_1": {
+        "ports": [
+          "reset_rtl",
+          "clk_wiz/reset"
+        ]
+      }
+    }
+  }
+}

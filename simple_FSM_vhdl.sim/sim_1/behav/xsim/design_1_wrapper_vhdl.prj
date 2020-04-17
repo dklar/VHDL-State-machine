@@ -1,0 +1,13 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../simple_FSM_vhdl.srcs/sources_1/new/Debouncer.vhd" \
+"../../../../simple_FSM_vhdl.srcs/sources_1/new/StateMachine.vhd" \
+"../../../../simple_FSM_vhdl.ip_user_files/bd/design_1/ip/design_1_Debouncer_0_0/sim/design_1_Debouncer_0_0.vhd" \
+"../../../../simple_FSM_vhdl.ip_user_files/bd/design_1/ip/design_1_clk_wiz_0/design_1_clk_wiz_0_sim_netlist.vhdl" \
+"../../../../simple_FSM_vhdl.ip_user_files/bd/design_1/ip/design_1_StateMachine_0_0/sim/design_1_StateMachine_0_0.vhd" \
+"../../../../simple_FSM_vhdl.ip_user_files/bd/design_1/ip/design_1_Debouncer_0_1/sim/design_1_Debouncer_0_1.vhd" \
+"../../../../simple_FSM_vhdl.ip_user_files/bd/design_1/sim/design_1.vhd" \
+"../../../../simple_FSM_vhdl.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd" \
+
+# Do not sort compile order
+nosort
